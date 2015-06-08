@@ -7,6 +7,10 @@ class UrlMappings {
             }
         }
 
+        "/user/login?" {
+            render "rifa/user/login"
+        }
+
         "/"(view:"user/index")
         "500"(view:'/error')
 	}
