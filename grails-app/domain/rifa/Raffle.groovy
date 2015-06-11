@@ -5,6 +5,7 @@ class Raffle {
 	static belongsTo = [buyer: Buyer, seller: Seller]
 	Date purchaseDate
 	Date expirationDate
+    String email
 
     static constraints = {
     	number(blank: false)

@@ -1,21 +1,73 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta name="layout" content="main">
+	</head>
 	<body>
-		<h1>SIGNUP</h1>
-		<form action="save" method="POST">
-		  	User name: <input type="text" name="userName"><br>
-		  	Password: <input type="password" name="password"><br>
-		  	Confirm Password: <input type="password" name="confirmPassword"><br>
-		  	First name: <input type="text" name="firstName"><br>
-		  	Last name: <input type="text" name="lastName"><br>
-		  	Email: <input type="text" name="email"><br>
-		  	Phone: <input type="text" name="phone"><br>
-		  	<SELECT NAME="selRole" SIZE=1> 
-			<OPTION VALUE="Admin">Admin</OPTION>
-			<OPTION VALUE="Seller">Seller</OPTION>
-			<OPTION VALUE="Buyer">Buyer</OPTION>
-			</SELECT> 
-		  	<input type="submit" value="Create account">
-		</form>
+		<center>
+			<form class="form-horizontal" action="save" method="POST">
+			  <fieldset>
+			    <div class="form-group">
+			      <label for="userName" class="col-lg-5 control-label">Username</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="userName" placeholder="userName" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="password" class="col-lg-5 control-label">Password</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="password" placeholder="Password" type="password">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="confirmPassword" class="col-lg-5 control-label">Confirm Password</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="confirmPassword" placeholder="Confirm Password" type="password">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="firstName" class="col-lg-5 control-label">First Name</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="firstName" placeholder="firstName" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="lastName" class="col-lg-5 control-label">Last Name</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="lastName" placeholder="lastName" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="email" class="col-lg-5 control-label">Email</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="email" placeholder="Email" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="phone" class="col-lg-5 control-label">Phone</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="phone" placeholder="Phone" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="select" class="col-lg-5 control-label">User Rol</label>
+			      <div class="col-lg-4">
+			        <select class="form-control" name="selRole">
+			          <option>Seller</option>
+			          <option>Buyer</option>
+			          <option>Administrator</option>
+
+			        </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <div class="col-lg-12">
+			        <button type="submit" class="btn btn-success btn-lg">SignIn</button>
+			        <button type="reset"  class="btn btn-default btn-sm" >Reset</button>
+			      </div>
+			    </div>
+			  </fieldset>
+			</form>
+		</center>
 	</body>
 </html>

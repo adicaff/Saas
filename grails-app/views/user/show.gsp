@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta name="layout" content="main">
+	</head>
 	<body>
-		<g:findAll in="${users}" expr="true">
-    		<p>${it.userName},${it.getClass()}, ${it.lastName}, ${it.firstName}</p>
-		</g:findAll>
+		<g:link class="btn btn-success" controller="raffle" action="sale">Raffle Sale</g:link>
 	</body>
 </html>

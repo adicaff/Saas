@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta name="layout" content="main">
+	</head>
 	<body>
-		<h1>LOGIN</h1>
-		<form action="login" method="POST">
-		  	User name: <input type="text" name="userName"><br>
-		  	Password: <input type="password" name="password"><br>
-		  	<input type="submit" value="Login">
-		</form> 
-		<g:link controller="user" action="signup">SignUp</g:link>
+		<center>
+			<form class="form-horizontal" action="login" method="POST">
+			  <fieldset>
+			    <div class="form-group">
+			      <label for="userName" class="col-lg-5 control-label">Username</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="userName" placeholder="userName" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="password" class="col-lg-5 control-label">Password</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="password" placeholder="Password" type="password">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <div class="col-lg-12">
+			        <button type="submit" class="btn btn-success btn-lg">Login</button>
+			        <g:link class="btn btn-default btn-sm" controller="user" action="signup">Signup</g:link>
+			      </div>
+			    </div>
+		   	</fieldset>
+			</form>
+		</center>
 	</body>
 </html>

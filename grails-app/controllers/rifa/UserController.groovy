@@ -15,9 +15,10 @@ class UserController {
     }
 
     def save(){
+        println params
         if(params.password == params.confirmPassword){
             def user
-            if(params.selRole == 'Admin'){
+            if(params.selRole == 'Administrator'){
             	user = new Administrator(params)
             }
         	else{
