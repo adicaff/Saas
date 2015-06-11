@@ -7,9 +7,9 @@ class UrlMappings {
             }
         }
 
-        "/user/login?" {
-            render "rifa/user/login"
-        }
+//        "/auth/login?" {
+  //          render "rifa/auth/login"
+    //    }
 
         "/"(view:"user/index")
         "500"(view:'/error')

@@ -14,15 +14,23 @@ class UserController {
         render(view: "signup")
     }
 
-    def create() {
-       	def user = new User(params)
-       	user.save()
-    }
-
     def save(){
-    	def user = new User(params)
-    	user.properties = params
-       	user.save()
+        if(params.password == params.confirmPassword){
+            def user
+            if(params.selRole == 'Admin'){
+            	user = new Administrator(params)
+            }
+        	else{
+                if(params.selRole == 'Seller'){
+                    user = new Seller(params)
+                }
+                else{
+                    user = new Buyer(params)
+                }
+            }
+            user.properties = params
+           	user.save()
+        }
     }
 
     def show() {

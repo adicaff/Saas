@@ -1,6 +1,6 @@
 package rifa
 
-class Administrator {
+class Administrator extends User{
 
     static constraints = {
     }

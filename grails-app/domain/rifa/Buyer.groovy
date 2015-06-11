@@ -1,6 +1,6 @@
 package rifa
 
-class Buyer {
+class Buyer extends User{
 	static hasMany = [raffles: Raffle]
     static constraints = {
     }
