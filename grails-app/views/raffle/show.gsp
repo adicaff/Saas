@@ -4,16 +4,13 @@
 		<meta name="layout" content="main">
 	</head>
 	<body>
-		<center><h1>Raffles sold</h1></center>
-		<g:each in="${raffles}">
-			<g:if ${it.seller.userName}==${session.user.userName}>
+		<center><h1>Raffle number ${raffle.id}</h1></center>
 	    		<div class="jumbotron">
-				 	<p> Numero: ${it.number} </p>
-				 	<p>	Vendedor: ${it.seller.userName} </p>
-				 	<p>	Email de contacto: ${it.email} </p>
-				 	<p><a class="btn btn-primary btn-lg">Learn more</a></p>
+				 	<p> Number: ${raffle.number} </p>
+				 	<p>	Seller: ${raffle.seller.userName} </p>
+				 	<p>	Purchase Date: ${raffle.purchaseDate} </p>
+				 	<p>	Expiration Date: ${raffle.expirationDate} </p>
+				 	<p>	Contact Email: ${raffle.email} </p>
 				</div>
-			</g:if>	
-		</g:each>
 	</body>
 </html>

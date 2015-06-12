@@ -17,4 +17,9 @@ class RaffleController {
      def index() {
      	[raffles:Raffle.listOrderByNumber()]
      }
+
+     def show() {
+        def raffle = Raffle.get(params.id)
+        [raffle:raffle]
+     }
 }

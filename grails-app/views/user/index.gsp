@@ -6,8 +6,17 @@
 		<meta name="layout" content="main">
 	</head>
 	<body>
-		<h1>BIENVENIDO</h1>
-		<g:link class="btn btn-success" controller="auth" action="login">Login</g:link>
-		<g:link class="btn btn-warning" controller="user" action="signup">SignUp</g:link>
+		<g:each in="${users}">
+ 
+	    		<div class="jumbotron">
+				 	<p> UserName: ${it.userName} </p>
+				 	<p>	First Name: ${it.firstName} </p>
+				 	<p>	Last Name : ${it.lastName} </p>
+				 	<p>	email: ${it.email} </p>
+				 	<p>	phone : ${it.phone} </p>
+				 	<p><g:link class="btn btn-default btn-sm" controller="user" action="delete" id="${it.id}">Remove</g:link></p>
+				</div>
+ 
+		</g:each>
 	</body>
 </html>
