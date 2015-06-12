@@ -5,4 +5,8 @@ class Seller extends User{
 	
     static constraints = {
     }
+
+    def getRafflesSold() {
+    	Raffle.findAllBySeller(this)
+    }
 }

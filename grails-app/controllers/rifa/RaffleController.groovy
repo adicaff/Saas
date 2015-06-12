@@ -14,7 +14,7 @@ class RaffleController {
        	raffle.save()
      }
 
-     def show() {
+     def index() {
      	[raffles:Raffle.listOrderByNumber()]
      }
 }

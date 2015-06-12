@@ -28,7 +28,7 @@
 			      </div>
 			    </div>
 			    <div class="form-group">
-			      <label for="email" class="col-lg-5 control-label">Email</label>
+			      <label for="email" class="col-lg-5 control-label">Buyer's email</label>
 			      <div class="col-lg-4">
 			        <input class="form-control" name="email" placeholder="email" type="text">
 			      </div>
