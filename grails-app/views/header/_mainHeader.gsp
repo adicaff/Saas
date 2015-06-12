@@ -5,7 +5,7 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><g:link controller="auth" action="login">Login</g:link></li>
+      <li><g:link controller="user" action="signout">Login/Signout</g:link></li>
       </ul>
     </div>
 	</div>

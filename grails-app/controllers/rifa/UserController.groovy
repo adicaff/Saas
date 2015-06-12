@@ -3,19 +3,33 @@ package rifa
 class UserController {
 
     def index() {
-    	
+    	if(session.user)
+            redirect controller: 'user', action: 'show'
+        else
+            redirect controller: 'auth', action: 'login'
     }
 
     def login() {
-        render(view: "login")
+        if(session.user)
+            redirect controller: 'user', action: 'show'
+        else
+            render(view: "login")
     }
 
     def signup() {
-        render(view: "signup")
+        if(session.user)
+            redirect controller: 'user', action: 'show'
+        else
+            render(view: "signup")
+    }
+
+    def signout() {
+        session.user = null
+        redirect controller: 'auth', action: 'login'       
     }
 
     def save(){
-        println params
+ 
         if(params.password == params.confirmPassword){
             def user
             if(params.selRole == 'Administrator'){
@@ -31,6 +45,8 @@ class UserController {
             }
             user.properties = params
            	user.save()
+            session.user = user
+        
         }
     }
 

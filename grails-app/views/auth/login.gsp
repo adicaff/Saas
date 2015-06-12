@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<center>
-			<form class="form-horizontal" action="login" method="POST">
+			<form class="form-horizontal" url="[action:'login',controller:'auth']" method="POST">
 			  <fieldset>
 			    <div class="form-group">
 			      <label for="userName" class="col-lg-5 control-label">Username</label>
