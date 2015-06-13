@@ -4,7 +4,7 @@
 		<meta name="layout" content="main">
 	</head>
 	<body>
-		<center><h1>Raffle number ${raffle.id}</h1></center>
+		<center><h1># ${raffle.number}</h1></center>
 	    		<div class="jumbotron">
 				 	<p> Number: ${raffle.number} </p>
 				 	<p>	Seller: ${raffle.seller.userName} </p>

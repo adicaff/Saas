@@ -8,14 +8,14 @@
 			<form class="form-horizontal" url="[action:'login',controller:'auth']" method="POST">
 			  <fieldset>
 			    <div class="form-group">
-			      <label for="userName" class="col-lg-5 control-label">Username</label>
-			      <div class="col-lg-4">
+			      <label for="userName" class="col-lg-4 control-label">Username</label>
+			      <div class="col-lg-5">
 			        <input class="form-control" name="userName" placeholder="userName" type="text">
 			      </div>
 			    </div>
 			    <div class="form-group">
-			      <label for="password" class="col-lg-5 control-label">Password</label>
-			      <div class="col-lg-4">
+			      <label for="password" class="col-lg-4 control-label">Password</label>
+			      <div class="col-lg-5">
 			        <input class="form-control" name="password" placeholder="Password" type="password">
 			      </div>
 			    </div>
