@@ -6,11 +6,17 @@ class Raffle {
 	Date purchaseDate
 	Date expirationDate
     String email
+    String name
+    String phone
+    String document
 
     static constraints = {
-    	number(blank: false)
-    	//buyer(blank: false)
+    	number(unique: true, blank: false)
     	seller(blank: false)
     	purchaseDate(blank: false)
+        email(blank: false)
+        name(blank: false)
+        phone(blank: false)
+        document(blank: false)
      }
 }

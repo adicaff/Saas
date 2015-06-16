@@ -33,6 +33,24 @@
 			        <input class="form-control" name="email" placeholder="email" type="text">
 			      </div>
 			    </div>
+			    <div class="form-group">
+			      <label for="document" class="col-lg-5 control-label">Buyer's document</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="document" placeholder="document" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="name" class="col-lg-5 control-label">Buyer's name</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="name" placeholder="name" type="text">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label for="phone" class="col-lg-5 control-label">Buyer's phone</label>
+			      <div class="col-lg-4">
+			        <input class="form-control" name="phone" placeholder="phone" type="text">
+			      </div>
+			    </div>
 			    
 			    <div class="form-group">
 			      <div class="col-lg-12">

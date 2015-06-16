@@ -11,6 +11,9 @@
 				 	<p>	Purchase Date: ${raffle.purchaseDate} </p>
 				 	<p>	Expiration Date: ${raffle.expirationDate} </p>
 				 	<p>	Contact Email: ${raffle.email} </p>
+				 	<p>	Buyers Name: ${raffle.name} </p>
+				 	<p>	Buyers Phone: ${raffle.phone} </p>
+				 	<p>	Buyers Document: ${raffle.document} </p>
 				</div>
 	</body>
 </html>
