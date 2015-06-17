@@ -11,9 +11,7 @@ import spock.lang.Specification
 class AuthControllerSpec extends Specification {
 
     def setup() {
-    	def user = new Administrator(userName: "admin", password: "admin", 
-                             firstName: "admin", lastName: "admin", 
-                             phone: "099212121", email: "admin@admin.com").save(flush: true)
+    
     }
 
     def cleanup() {
@@ -21,12 +19,16 @@ class AuthControllerSpec extends Specification {
     }
 
     void "test login redirection"() {
+        given:
+            controller.authService = [ 
+                validateUser: { u, p -> new User(userName: u, password: p)}
+            ]
     	when:
-    	params['userName'] = 'admin'
-    	params['password'] = 'admin'
-    	controller.login()
+    	   controller.params['userName'] = 'admin'
+    	   controller.params['password'] = 'admin'
+    	   controller.login()
 
     	then:
-    	view == '/user/show'	
+    	   response.redirectedUrl == '/user/show'	
     }
 }

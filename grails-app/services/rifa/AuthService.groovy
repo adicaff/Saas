@@ -9,9 +9,4 @@ class AuthService {
     def validateUser(String userName, String pass) {
     	return User.findByUserNameAndPassword(userName, pass)
     }
-    def getToken(User user) {
-    	String id = UUID.randomUUID().toString()
-    	guidMap.id = user
-    	return id
-    }
 }

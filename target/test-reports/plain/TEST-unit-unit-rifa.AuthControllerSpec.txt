@@ -1,5 +1,5 @@
 Testsuite: rifa.AuthControllerSpec
-Tests run: 1, Failures: 0, Errors: 1, Time elapsed: 6,371 sec
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 6,515 sec
 ------------- Standard Output ---------------
 --Output from test login redirection--
 ------------- ---------------- ---------------
@@ -7,10 +7,4 @@ Tests run: 1, Failures: 0, Errors: 1, Time elapsed: 6,371 sec
 --Output from test login redirection--
 ------------- ---------------- ---------------
 
-Testcase: test login redirection took 6,274 sec
-	Caused an ERROR
-Cannot invoke method validateUser() on null object
-java.lang.NullPointerException: Cannot invoke method validateUser() on null object
-	at rifa.AuthController.login(AuthController.groovy:11)
-	at rifa.AuthControllerSpec.test login redirection(AuthControllerSpec.groovy:27)
-
+Testcase: test login redirection took 6,408 sec

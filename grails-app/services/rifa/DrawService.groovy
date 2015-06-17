@@ -17,8 +17,9 @@ class DrawService {
     def Raffle launchDraw() {
         Raffle winner = getWinnerRaffle()
         def date = new Date()
-        def draw = new Draw(winner.number, date, winner, null, null)
+        def draw = new Draw(winner.number, date, winner)
         sendEmail(winner)
+        sendSellerEmail(winner)
         return winner
     }
 
@@ -42,5 +43,23 @@ Muchas gracias y felicitaciones de parte del equipo de Rifapp!!!
 
 Te invitamos a conocer nuestro sitio: http://rifapp.herokuapp.com/"""
 		}
+    }
+
+    def sendSellerEmail(Raffle winner)    {
+        mailService.sendMail {   
+            async true
+            to winner.seller.email
+            subject "Has vendido una rifa ganadora"
+            body """Cómo estas ${winner.seller.userName}? 
+La rifa número: ${winner.number}, ha salido sorteada y tú la has vendido.
+
+Comunicate con ${winner.name} para acordar la entrega de su premio.
+
+Contacto ${winner.name}:
+Email: ${winner.email}
+Telefono: ${winner.phone}
+
+Muchas gracias y felicitaciones de parte del equipo de Rifapp!!!"""
+        }
     }
 }

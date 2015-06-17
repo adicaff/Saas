@@ -3,6 +3,7 @@ package rifa
 class AuthController {
 
 	def authService
+    
     def login() {
     	if(session.user){
             redirect controller: 'user', action: 'show'
@@ -12,8 +13,6 @@ class AuthController {
         	if(user) {
         		session.user = user
         		redirect controller: 'user', action: 'show'
-        		//def token = authService.getToken(user)
-           		//render token
             }
     	}
      }

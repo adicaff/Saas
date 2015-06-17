@@ -7,11 +7,12 @@ class DrawController {
     {
     	if(session.user){
         if(Raffle.getAll()){
-            winner = drawService.launchDraw()
+            def winner = drawService.launchDraw()
     	      [winner:winner]
         }
         else{
-        	redirect controller: 'draw', action: 'error'	
+        	//redirect controller: 'draw', action: 'error'	
+          render view: 'error'
         }
    		}
    		else
