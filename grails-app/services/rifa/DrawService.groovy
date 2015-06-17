@@ -14,6 +14,14 @@ class DrawService {
 	    raffles.get(index)
     }
 
+    def Raffle launchDraw() {
+        Raffle winner = getWinnerRaffle()
+        def date = new Date()
+        def draw = new Draw(winner.number, date, winner, null, null)
+        sendEmail(winner)
+        return winner
+    }
+
     def sendEmail(Raffle winner)	{
     	mailService.sendMail {   
     		async true

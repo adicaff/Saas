@@ -3,23 +3,39 @@ package rifa
 class RaffleController {
 
     def sale() {
-    	render(view: "sale")
+        if(session.user)
+        	render(view: "sale")
+        else
+            redirect controller: 'auth', action: 'login'
      }
 
      def create() {
-        def seller = Seller.get(session.user.id)
-        def raffle = new Raffle(params)
-        raffle.seller = session.user
-        raffle.properties = params
-       	raffle.save()
+        if(session.user){
+            def seller = Seller.get(session.user.id)
+            def raffle = new Raffle(params)
+            raffle.seller = session.user
+            raffle.properties = params
+           	raffle.save()
+            seller.cantSales = seller.cantSales + 1
+        }
+        else
+            redirect controller: 'auth', action: 'login'
      }
 
      def index() {
-     	[raffles:Raffle.listOrderByNumber()]
+        if(session.user)    
+         	[raffles:Raffle.listOrderByNumber()]
+        else
+            redirect controller: 'auth', action: 'login'
      }
 
      def show() {
-        def raffle = Raffle.get(params.id)
-        [raffle:raffle]
+        if(session.user){
+            def raffle = Raffle.get(params.id)
+            [raffle:raffle]
+        }
+        else{
+            redirect controller: 'auth', action: 'login'
+        }
      }
 }

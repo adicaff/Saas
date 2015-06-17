@@ -11,6 +11,11 @@
 			      <label for="userName" class="col-lg-4 control-label">Username</label>
 			      <div class="col-lg-5">
 			        <input class="form-control" name="userName" placeholder="userName" type="text">
+			        <g:hasErrors bean="${user}" field="username">
+	                    <g:eachError bean="${user}" field="username">
+	                        <p style="color: red;"><g:message error="${it}"/></p>
+	                    </g:eachError>
+                	</g:hasErrors>
 			      </div>
 			    </div>
 			    <div class="form-group">

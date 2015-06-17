@@ -5,10 +5,16 @@ class DrawController {
 	def drawService
     def show() 
     {
-    	Raffle winner = drawService.getWinnerRaffle()
-    	def date = new Date()
-    	def draw = new Draw(winner.number, date, winner, null, null)
-    	drawService.sendEmail(winner)
-    	[winner:winner]
+    	if(session.user){
+        if(Raffle.getAll()){
+            winner = drawService.launchDraw()
+    	      [winner:winner]
+        }
+        else{
+        	redirect controller: 'draw', action: 'error'	
+        }
+   		}
+   		else
+   			redirect controller: 'auth', action: 'login'
     }
 }

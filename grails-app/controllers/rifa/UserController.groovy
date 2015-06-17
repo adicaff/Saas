@@ -28,12 +28,7 @@ class UserController {
             	user = new Administrator(params)
             }
         	else{
-                if(params.selRole == 'Seller'){
-                    user = new Seller(params)
-                }
-                else{
-                    user = new Buyer(params)
-                }
+                user = new Seller(params)
             }
             user.properties = params
            	user.save()
@@ -42,7 +37,10 @@ class UserController {
     }
 
     def show() {
-     	[users:User.listOrderByLastName()]
+        if(session.user)
+         	[users:User.listOrderByLastName()]
+        else
+            redirect controller: 'auth', action: 'login'
     }
 
     def delete() {

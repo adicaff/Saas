@@ -54,7 +54,6 @@
 			      <div class="col-lg-5">
 			        <select class="form-control" name="selRole">
 			          <option>Seller</option>
-			          <option>Buyer</option>
 			          <option>Administrator</option>
 
 			        </select>
