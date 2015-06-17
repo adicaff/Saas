@@ -6,14 +6,30 @@ import java.util.Random
 @Transactional
 class DrawService {
 
+	def mailService
 	private Random random = new Random();
-    def getWinnerRaffle() {
-    	println "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
-    	println "ENTROOOOOO"
+    def Raffle getWinnerRaffle() {
     	def raffles = Raffle.getAll()
     	int index = random.nextInt(raffles.size())
-    	println "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
-    	println index
 	    raffles.get(index)
+    }
+
+    def sendEmail(Raffle winner)	{
+    	mailService.sendMail {   
+    		async true
+	  		to winner.email
+			subject "Tu rifa ha ganado en Rifapp"
+			body """Cómo estas ${winner.name}? 
+Tu rifa número: ${winner.number}, ha salido sorteada.
+
+Comunicate con ${winner.seller.userName} para acordar la entrega de tu premio.
+
+Contacto ${winner.seller.userName}:
+Nombre: ${winner.seller.firstName} ${winner.seller.lastName}
+Email: ${winner.seller.email}
+Telefono: ${winner.seller.phone}
+
+Muchas gracias y felicitaciones de parte del equipo de Rifapp!!!"""
+		}
     }
 }

@@ -58,8 +58,21 @@ grails {
         // escapes all not-encoded output at final stage of outputting
         // filteringCodecForContentType.'text/html' = 'html'
     }
+
+   mail {
+     host = "smtp.gmail.com"
+     port = 465
+     username = "rifappserver@gmail.com"
+     password = "rifa1414"
+     props = ["mail.smtp.auth":"true",                     
+              "mail.smtp.socketFactory.port":"465",
+              "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+              "mail.smtp.socketFactory.fallback":"false"]
+
+   }
 }
 
+//grails.mail.default.from="rifappserver@gmail.com"
 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
@@ -89,9 +102,35 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails{
+            mail {
+                 host = "smtp.gmail.com"
+                 port = 465
+                 username = "rifappserver@gmail.com"
+                 password = "rifa1414"
+                 props = ["mail.smtp.auth":"true",                     
+                          "mail.smtp.socketFactory.port":"465",
+                          "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                          "mail.smtp.socketFactory.fallback":"false"]
+
+            }
+        }
     }
     production {
         grails.logging.jul.usebridge = false
+        grails{
+            mail {
+                 host = "smtp.gmail.com"
+                 port = 465
+                 username = "rifappserver@gmail.com"
+                 password = "rifa1414"
+                 props = ["mail.smtp.auth":"true",                     
+                          "mail.smtp.socketFactory.port":"465",
+                          "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                          "mail.smtp.socketFactory.fallback":"false"]
+
+            }
+        }
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
