@@ -9,13 +9,6 @@ class UserController {
             redirect controller: 'auth', action: 'login'
     }
 
-    def login() {
-        if(session.user)
-            redirect controller: 'user', action: 'show'
-        else
-            render(view: "login")
-    }
-
     def signup() {
         if(session.user)
             redirect controller: 'user', action: 'show'

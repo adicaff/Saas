@@ -29,7 +29,10 @@ Nombre: ${winner.seller.firstName} ${winner.seller.lastName}
 Email: ${winner.seller.email}
 Telefono: ${winner.seller.phone}
 
-Muchas gracias y felicitaciones de parte del equipo de Rifapp!!!"""
+Muchas gracias y felicitaciones de parte del equipo de Rifapp!!!
+
+
+Te invitamos a conocer nuestro sitio: http://rifapp.herokuapp.com/"""
 		}
     }
 }
